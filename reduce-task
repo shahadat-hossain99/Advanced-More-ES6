@@ -1,0 +1,79 @@
+const items = [
+  { name: "Rice", price: 60 },
+  { name: "Oil", price: 180 },
+  { name: "Sugar", price: 120 },
+];
+// আউটপুট হওয়া উচিত: 360
+
+const total = items.reduce(function (acc, currentItem) {
+  return acc + currentItem.price;
+}, 0);
+console.log("মোট খরচ:", total);
+
+// Task--->02(বড় সংখ্যা খুঁজে বের করা)
+
+const nums = [5, 25, 10, 80, 15];
+// আউটপুট হওয়া উচিত: 80
+
+const big = nums.find((num) => num > 50);
+console.log(big);
+
+// task---->04(অবজেক্ট কাউন্টিং (চ্যালেঞ্জ!))
+// const fruits = ["Apple", "Orange", "Apple", "Banana", "Orange", "Apple"];
+// // আউটপুট আসা উচিত: { Apple: 3, Orange: 2, Banana: 1 }
+
+// const filterItem = fruits.filter((item) => {
+//   if (item.toLowerCase === "apple") {
+//     con;
+//   } else {
+//   }
+// });
+
+// নির্দিষ্ট কাউকে ফিল্টার করে খোঁজা
+const values = [10, 25, 30, 15, 40];
+const biggerArr = values.filter((valu) => valu > 20);
+console.log(biggerArr);
+
+const theOne = biggerArr.find((big) => big > 30);
+console.log(theOne);
+
+/* const nums = [5, 25, 10, 80, 15];
+
+const big = nums.reduce((max, current) => {
+    // যদি বর্তমান সংখ্যাটি আগের জমানো max এর চেয়ে বড় হয়, তবে তাকেই নতুন max বানাও
+    return current > max ? current : max;
+}, nums[0]); // এখানে প্রথম সংখ্যাটিকে (৫) শুরুর মান ধরলাম
+
+console.log("সবচেয়ে বড় সংখ্যা:", big); // আউটপুট: 80
+*/
+
+/*
+  const fruits = ["Apple", "Orange", "Apple", "Banana", "Orange", "Apple"];
+
+const count = fruits.reduce((acc, fruit) => {
+    // যদি ফলটি আগে থেকেই আমাদের ঝুড়িতে (acc) থাকে, তবে তার মান ১ বাড়িয়ে দাও
+    if (acc[fruit]) {
+        acc[fruit] = acc[fruit] + 1;
+    } else {
+        // যদি ফলটি প্রথমবার পাওয়া যায়, তবে ১ দিয়ে শুরু করো
+        acc[fruit] = 1;
+    }
+    return acc;
+}, {}); // শুরুতে আমরা একটি খালি অবজেক্ট {} নিলাম
+
+console.log(count); // আউটপুট: { Apple: 3, Orange: 2, Banana: 1 }
+ */
+const fruits = ["Apple", "Orange", "Apple", "Banana", "Orange", "Apple"];
+
+const count = fruits.reduce((acc, fruit) => {
+  // যদি ফলটি আগে থেকেই আমাদের ঝুড়িতে (acc) থাকে, তবে তার মান ১ বাড়িয়ে দাও
+  if (acc[fruit]) {
+    acc[fruit] = acc[fruit] + 1;
+  } else {
+    // যদি ফলটি প্রথমবার পাওয়া যায়, তবে ১ দিয়ে শুরু করো
+    acc[fruit] = 1;
+  }
+  return acc;
+}, {}); // শুরুতে আমরা একটি খালি অবজেক্ট {} নিলাম
+
+console.log(count); // আউটপুট: { Apple: 3, Orange: 2, Banana: 1 }

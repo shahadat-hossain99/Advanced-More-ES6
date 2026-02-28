@@ -35,6 +35,6 @@ for (let i = 1; i <= 3; i++) {
   setTimeout(function () {
     console.log("সংখ্যাটি হলো: " + i);
   }, 1000);
-  return;
+  //   return;
 }
 // আউটপুট: 1, 2, 3
